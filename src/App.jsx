@@ -12,9 +12,9 @@ function App() {
   return (
     <div className="App">
       <div className="header">
-        <h1>
+        <h2>
           Budget <span className="header-colored">Visualizer</span>
-        </h1>
+        </h2>
       </div>
       <div className="app-content">
         <div className="c-l">

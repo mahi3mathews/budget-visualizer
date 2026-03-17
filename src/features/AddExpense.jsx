@@ -9,7 +9,6 @@ export function AddExpense({ expense, setExpense }) {
   const [error, setError] = useState("");
   // Handles form submission to add a new expense
   const handleSubmit = (e) => {
-    console.log("handle submit called", e.target);
     e.preventDefault();
     const formData = new FormData(e.target);
 
@@ -21,15 +20,22 @@ export function AddExpense({ expense, setExpense }) {
       id: expense.length,
       category: selectedCategory || "Uncategorized",
     };
+    // Basic validation to check if all fields are filled
     if (
       formData.get("name") === "" ||
       formData.get("amount") === "" ||
       !selectedCategory
-    )
+    ) {
       setError("Please fill all the fields");
+      return;
+    }
 
     setExpense((prev) => [...prev, expenseData]);
+
+    // Reset the add expense form
     e.target.reset();
+    setSelectedCategory("");
+    setError("");
   };
 
   return (
