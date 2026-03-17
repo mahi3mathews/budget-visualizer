@@ -3,15 +3,15 @@ export function Button({ children, onClick, theme, error, ...props }) {
     if (onClick) onClick(e);
   };
   return (
-    <div>
+    <>
       <button
         className={`button ${theme ?? ""}`}
         onClick={handleClick}
         {...props}
       >
-        <span>{children}</span>
+        {children}
       </button>
-      <div className="button-error">{error}</div>
-    </div>
+      {error && <div className="button-error">{error}</div>}
+    </>
   );
 }

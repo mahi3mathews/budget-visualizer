@@ -22,26 +22,32 @@ export function IncomeCard({ income, setIncome }) {
   return (
     <Card className="income-card">
       <h2>Monthly Income</h2>
-      <h3>${income.toFixed(2)}</h3>
-
-      {isEdit ? (
-        <div className="edit-income">
-          <Input
-            type="number"
-            value={changedIncome}
-            onChange={(e) => handleChange(parseFloat(e.target.value))}
-            placeholder="Enter your monthly income"
-          />
-          <Button theme="primary" onClick={() => handleInputSave()}>
-            Save
-          </Button>
-          {/* TDL: Add a cancel button */}
-        </div>
-      ) : (
-        <Button theme="secondary" onClick={() => setIsEdit(true)}>
-          Edit
-        </Button>
-      )}
+      <div className="income-display">
+        <h3>${income.toFixed(2)}</h3>{" "}
+        {!isEdit && (
+          <>
+            <Button theme="transparent" onClick={() => setIsEdit(true)}>
+              <img src="/assets/edit.svg" className="edit-icon" />
+            </Button>
+          </>
+        )}
+      </div>
+      <div className="edit-income">
+        {isEdit && (
+          <>
+            <Input
+              type="number"
+              value={changedIncome}
+              onChange={(e) => handleChange(parseFloat(e.target.value))}
+              placeholder="Enter your monthly income"
+            />
+            <Button theme="primary" onClick={() => handleInputSave()}>
+              Save
+            </Button>
+            {/* TDL: Add a cancel button */}
+          </>
+        )}
+      </div>
     </Card>
   );
 }
