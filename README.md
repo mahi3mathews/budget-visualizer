@@ -26,3 +26,13 @@ Key Features
 - Material UI
 
 - Local Storage
+
+
+## Getting Started
+
+1. Clone the repo
+``` git clone https://github.com/mahi3mathews/budget-visualizer.git ```
+2. Install the packages
+``` npm install ```
+3. Run the app
+``` npm run dev ```
