@@ -10,11 +10,14 @@
 
 .app-content {
   display: flex;
+  height: 100vh;
 }
 .c-l {
   flex: 1;
   background-color: #161b21;
   padding: 50px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .c-r {
   flex: 2;
@@ -36,6 +39,7 @@
   border: none;
   cursor: pointer;
   width: 100%;
+  max-width: 300px;
 }
 
 .button-error {
@@ -230,4 +234,27 @@
   padding: 10px;
   border-radius: 10px;
   display: flex;
+}
+
+/* Budget Graph  */
+
+.budget-graph {
+  margin: 20px 0;
+}
+.budget-net-value {
+  font-size: 40px;
+  font-weight: bold;
+}
+.budget-net-value.safe {
+  color: var(--green);
+}
+.budget-net-value.warning {
+  color: var(--yellow);
+}
+.budget-net-value.danger {
+  color: var(--red);
+}
+.caption-subtitle {
+  font-size: 12px;
+  color: var(--text);
 }
