@@ -16,9 +16,6 @@
   flex: 1;
   background-color: #161b21;
   padding: 50px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  margin-bottom: 30px;
   scrollbar-width: thin;
   scrollbar-color: var(--background-accent) transparent;
   scrollbar-button-color: transparent;
@@ -26,7 +23,6 @@
 .c-l::-webkit-scrollbar {
   width: 6px;
 }
-
 .c-l::-webkit-scrollbar-thumb {
   background: var(--bg);
   border-radius: 10px;
@@ -42,13 +38,30 @@
   flex: 2;
   background-color: var(--bg);
   padding: 20px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  margin-bottom: 60px;
   scrollbar-width: thin;
   scrollbar-color: var(--background-accent) transparent;
   scrollbar-button-color: transparent;
 }
+
+@media (min-width: 790px) {
+  .c-l {
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-bottom: 60px;
+  }
+  .c-r {
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 790px) {
+  .app-content {
+    flex-direction: column;
+  }
+}
+
 .card {
   padding: 20px;
   background-color: var(--background-secondary);
@@ -268,6 +281,7 @@
   gap: 10px;
   justify-content: left;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .expense-filter-button {
