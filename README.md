@@ -1,16 +1,28 @@
-# React + Vite
+# Budget Visualizer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This app, which is built with React + Vite, is a real-time personal budget dashboard to help users track their spending habits through visual feedback using the processed data.
+[Live Link](https://budget-visualiser.netlify.app/)
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The goal wasn't just to list expenses, but to process them. The app takes your total income and calculates your "Burn Rate" in real-time.
 
-## React Compiler
+Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Smart Logging: Quickly add expenses with names, amounts, and categories.
 
-## Expanding the ESLint configuration
+- The Progress Graph: A dynamic visual representation of your spending habits using Material UI components.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Precision Filtering: Based on category, one click filters the entire expense dashboard.
+
+- Priority Sorting: Toggle between most expensive purchases and most recent ones to see where the money is really going.
+
+- Real-Time Balance: The "Remaining Budget" updates instantly as you type, so there are never any surprises at the end of the month.
+
+## Tech Stack
+
+- ReactJs (Vite)
+
+- Material UI
+
+- Local Storage
