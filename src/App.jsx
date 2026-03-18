@@ -3,6 +3,7 @@ import "./App.css";
 import { ExpenseForm } from "./features/ExpenseForm";
 import { IncomeCard } from "./features/IncomeCard";
 import { ExpenseList } from "./features/ExpenseList";
+import { BudgetGraph } from "./features/BudgetGraph";
 
 function App() {
   // Local state for income and expenses
@@ -27,7 +28,7 @@ function App() {
       <div className="app-content">
         <div className="c-l">
           <IncomeCard income={income} setIncome={setIncome} />
-          {/* <BudgetGraph income={income} expense={expense} /> */}
+          <BudgetGraph income={income} expense={expense} />
           <ExpenseForm
             expense={expense}
             setExpense={setExpense}
