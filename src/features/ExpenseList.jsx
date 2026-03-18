@@ -3,14 +3,21 @@ import { ExpenseCard } from "./ExpenseCard";
 import { ExpenseFilter } from "./ExpenseFilter";
 import { ExpenseSorter } from "./ExpenseSorter";
 
-export function ExpenseList({ expense, onDelete, onEdit, disableActions }) {
+export function ExpenseList({
+  expense,
+  onDelete,
+  onEdit,
+  disableActions,
+  filteredExpenses,
+  setFilteredExpenses,
+}) {
   const expenseFilters = [
     "All",
     ...new Set(expense.map((item) => item.category)),
   ];
   const sortList = ["Recent", "Highest"];
+
   const [selectedFilter, setSelectedFilter] = useState("All");
-  const [filteredExpenses, setFilteredExpenses] = useState(expense);
   const [selectedSort, setSelectedSort] = useState("Recent");
 
   useEffect(() => {
