@@ -68,6 +68,11 @@ body {
   flex-direction: column;
   box-sizing: border-box;
 }
+@media (max-width: 790px) {
+  #root {
+    overflow: auto;
+  }
+}
 
 h1,
 h2 {

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import { ExpenseForm } from "./features/ExpenseForm";
 import { IncomeCard } from "./features/IncomeCard";
