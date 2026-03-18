@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import { ExpenseForm } from "./features/ExpenseForm";
 import { IncomeCard } from "./features/IncomeCard";
@@ -10,13 +10,15 @@ function App() {
   const [income, setIncome] = useState(0);
   const [expense, setExpense] = useState([]);
   const [editExpense, setEditExpense] = useState(null);
+  const [filteredExpenses, setFilteredExpenses] = useState(expense);
+
   const handleDelete = (id) => {
     setExpense((prev) => prev.filter((e) => e.id !== id));
   };
 
-  const handleEdit = (id) => {
-    setEditExpense(`${id}`);
-  };
+  const handleEdit = (id) => setEditExpense(`${id}`);
+
+  const handleResetEdit = () => setEditExpense(null);
 
   return (
     <div className="App">
@@ -33,7 +35,7 @@ function App() {
             expense={expense}
             setExpense={setExpense}
             editExpense={editExpense}
-            setEditExpense={setEditExpense}
+            resetEdit={handleResetEdit}
           />
         </div>
         <div className="c-r">
@@ -42,6 +44,8 @@ function App() {
             disableActions={editExpense !== null}
             onDelete={handleDelete}
             onEdit={handleEdit}
+            setFilteredExpenses={setFilteredExpenses}
+            filteredExpenses={filteredExpenses}
           />
         </div>
       </div>

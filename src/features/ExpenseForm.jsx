@@ -4,12 +4,7 @@ import { Card } from "../components/Card";
 import { CategorySelect } from "./CategorySelect";
 import { useEffect, useState } from "react";
 
-export function ExpenseForm({
-  expense,
-  setExpense,
-  editExpense,
-  setEditExpense,
-}) {
+export function ExpenseForm({ expense, setExpense, editExpense, resetEdit }) {
   const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     name: "",
@@ -19,7 +14,7 @@ export function ExpenseForm({
 
   useEffect(() => {
     if (editExpense) {
-      setFormData(expense[editExpense]);
+      setFormData(expense.find((item) => item?.id === Number(editExpense)));
     }
   }, [editExpense, expense]);
 
@@ -29,7 +24,7 @@ export function ExpenseForm({
     // Setting id as length of expense array, can be changed to uuid or timestamp
     const expenseData = {
       date: new Date(),
-      id: editExpense ?? expense.length,
+      id: editExpense !== null ? editExpense : expense.length,
       ...formData,
     };
     // Basic validation to check if all fields are filled
@@ -50,7 +45,7 @@ export function ExpenseForm({
     // Reset the add expense form
     setFormData({ name: "", amount: "", category: "" });
     setError("");
-    setEditExpense(null);
+    resetEdit();
   };
 
   const handleChange = (value, field) => {
