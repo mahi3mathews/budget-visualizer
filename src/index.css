@@ -55,15 +55,15 @@ html {
 
 body {
   margin: 0;
-  height: 100vh;
-  overflow: hidden;
 }
 
 #root {
+  height: 100vh;
+  overflow: hidden;
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
-  min-height: 100svh;
+  /* min-height: 100svh; */
   display: flex;
   flex-direction: column;
   box-sizing: border-box;

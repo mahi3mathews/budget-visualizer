@@ -26,7 +26,6 @@ export function ExpenseForm({
   // Handles form submission to add a new expense
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
     // Setting id as length of expense array, can be changed to uuid or timestamp
     const expenseData = {
       date: new Date(),
@@ -63,7 +62,7 @@ export function ExpenseForm({
       <form onSubmit={handleSubmit}>
         <div className="add-expense-inputs">
           <div className="add-expense-field">
-            <label> Expense name</label>
+            <span className="expense-form-label"> Name</span>
             <Input
               type="text"
               name="name"
@@ -74,7 +73,7 @@ export function ExpenseForm({
             />
           </div>
           <div className="add-expense-field">
-            <label> Amount</label>
+            <span className="expense-form-label"> Amount</span>
             <Input
               type="number"
               name="amount"

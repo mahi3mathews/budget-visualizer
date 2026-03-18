@@ -18,11 +18,36 @@
   padding: 50px;
   overflow-y: auto;
   overflow-x: hidden;
+  margin-bottom: 30px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--background-accent) transparent;
+  scrollbar-button-color: transparent;
 }
+.c-l::-webkit-scrollbar {
+  width: 6px;
+}
+
+.c-l::-webkit-scrollbar-thumb {
+  background: var(--bg);
+  border-radius: 10px;
+}
+.c-l::-webkit-scrollbar-button {
+  display: none;
+}
+.c-l::-webkit-scrollbar-track {
+  background: transparent;
+}
+
 .c-r {
   flex: 2;
   background-color: var(--bg);
   padding: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom: 60px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--background-accent) transparent;
+  scrollbar-button-color: transparent;
 }
 .card {
   padding: 20px;
@@ -70,6 +95,34 @@
   background-color: var(--background-accent);
 }
 
+.pill {
+  width: fit-content;
+  padding: 3px 15px;
+  border-radius: 20px;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: bold;
+}
+.pill.transparent {
+  background-color: transparent;
+  border: 2px solid var(--border);
+}
+.pill.pointer {
+  cursor: pointer;
+}
+.pill.success {
+  background-color: var(--green);
+  color: #fff;
+}
+.pill.warning {
+  background-color: var(--yellow);
+  color: #fff;
+}
+.pill.danger {
+  background-color: var(--red);
+  color: #fff;
+}
+
 /* Income Card */
 
 .edit-income {
@@ -109,11 +162,15 @@
   border: 2px solid var(--primary);
 }
 .add-expense-field {
-  margin-bottom: 10px;
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin: 0 10px;
+}
+
+.add-expense-field .input {
+  padding: 10px 5px;
+  width: 100%;
 }
 
 .add-expense label {
@@ -123,12 +180,16 @@
 
 .add-expense-inputs {
   display: flex;
-  justify-content: space-between;
 }
 
 .add-expense-category {
   flex: 1;
   margin: 10px;
+}
+
+.expense-form-label {
+  font-weight: bold;
+  text-align: left;
 }
 
 .add-expense .primary {
@@ -178,6 +239,51 @@
   width: 24px;
   height: 24px;
 }
+/* Expense List */
+
+.expense-list-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.expense-sorter {
+  display: flex;
+}
+
+.expense-sorter-button.pill {
+  border: 0px;
+  border-radius: 0px;
+  background: var(--background-accent);
+  font-size: 12px;
+}
+
+.expense-sorter-button.active {
+  color: var(--primary);
+}
+
+.expense-filter {
+  display: flex;
+  gap: 10px;
+  justify-content: left;
+  margin-bottom: 20px;
+}
+
+.expense-filter-button {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.expense-filter-button.active {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.expense-filter-icon {
+  width: 20px;
+  height: 20px;
+}
 
 /* Expense Card  */
 
@@ -219,6 +325,9 @@
 .expense-card p {
   font-size: 16px;
   margin: 0;
+  text-align: left;
+}
+.expense-info {
   text-align: left;
 }
 .expense-info .expense-name {
