@@ -1,7 +1,7 @@
 import { Button } from "../components/Button";
 import { Card } from "../components/Card";
 
-export function ExpenseCard({ expense, onEdit, onDelete }) {
+export function ExpenseCard({ expense, onEdit, onDelete, disableActions }) {
   const { name, amount, date, id, category } = expense;
   return (
     <Card className="expense-card" key={id}>
@@ -23,10 +23,18 @@ export function ExpenseCard({ expense, onEdit, onDelete }) {
           <p>${amount.toFixed(2)}</p>
         </div>
         <div className="expense-actions">
-          <Button theme="transparent" onClick={() => onEdit(id)}>
+          <Button
+            theme="transparent"
+            onClick={() => onEdit(id)}
+            disabled={disableActions}
+          >
             <img src="/assets/edit.svg" className="edit-icon" />
           </Button>
-          <Button theme="transparent" onClick={() => onDelete(id)}>
+          <Button
+            theme="transparent"
+            onClick={() => onDelete(id)}
+            disabled={disableActions}
+          >
             <img src="/assets/delete.svg" className="delete-icon" color="red" />
           </Button>
         </div>
