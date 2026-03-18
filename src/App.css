@@ -97,9 +97,12 @@
   text-align: right;
 } */
 
-/* Add expense form */
+/* Expense form */
 .add-expense {
   margin: 20px 0;
+}
+.add-expense.edit {
+  border: 2px solid var(--primary);
 }
 .add-expense-field {
   margin-bottom: 10px;
